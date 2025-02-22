@@ -96,6 +96,7 @@
                 const userCredential = await signInWithEmailAndPassword(auth, email, password);
                 console.log('User logged in:', userCredential.user);
                 localStorage.setItem('userName', userCredential.user.displayName); // Store user name in local storage
+                localStorage.setItem('userEmail', userCredential.user.email); // Store user email in local storage
                 window.location.href = 'dash.html'; // Redirect to main webpage
             } catch (error) {
                 loginError.textContent = error.message;
@@ -122,6 +123,7 @@
                 console.log('User created:', userCredential.user);
                 alert('Account created successfully! Redirecting to main webpage...');
                 localStorage.setItem('userName', name); // Store user name in local storage
+                localStorage.setItem('userEmail', email); // Store user email in local storage
                 window.location.href = 'dash.html'; // Redirect to main webpage
             } catch (error) {
                 signupError.textContent = error.message;

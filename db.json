@@ -2,21 +2,27 @@
   "users": [
     {
       "id": "1",
-      "name": "Varshith",
-      "email": "varshith@email.com",
-      "balance": 13020
+      "name": "Prashant Chaudhary",
+      "email": "Prashant@email.com",
+      "balance": 1247464
     },
     {
       "id": "2",
       "name": "Lalith",
       "email": "Lalith@email.com",
-      "balance": 6980
+      "balance": 7103
     },
     {
       "id": "3",
-      "name": "VijayDevarakonda",
-      "email": "vijaydevarakonda@email.com",
+      "name": "Shubh",
+      "email": "Shubh@email.com",
       "balance": 24000
+    },
+    {
+      "id": "4",
+      "name": "Pushkar Singh",
+      "email": "Pushkar@email.com",
+      "balance": 1247464
     },
     {
       "id": "68ca",
@@ -25,6 +31,7 @@
       "password": "qwertyuiop",
       "balance": 0
     }
+
   ],
   "transactions": [
     {
@@ -61,6 +68,13 @@
       "sender": "Varshith",
       "receiver": "Lalith",
       "amount": 123
+    },
+    {
+      "id": "6dba",
+      "date": "2025-02-22T09:00:28.436Z",
+      "sender": "Varshith",
+      "receiver": "Lalith",
+      "amount": 123
     }
   ],
   "loans": [
@@ -68,6 +82,12 @@
       "id": "e73a",
       "date": "2025-02-21T23:26:12.581Z",
       "amount": 10000,
+      "status": "Approved"
+    },
+    {
+      "id": "e449",
+      "date": "2025-02-22T09:01:35.447Z",
+      "amount": 1234567,
       "status": "Approved"
     }
   ]

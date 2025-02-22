@@ -34,13 +34,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="./index.html">Logout <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="aboutus.html">About Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./customers.html">Customers</a>
+              <a class="nav-link" href="./customers.html">Send Money</a>
             </li>
           </ul>
         </div>
@@ -109,6 +109,14 @@
     </section>
     <!-- contact section ends here -->
 
+    <!-- dashboard section starts here -->
+    <div class="dashboard-container">
+        <h1>Welcome, <span id="userName"></span></h1>
+        <p>Your email: <span id="userEmail"></span></p>
+        <!-- Add more user details as needed -->
+    </div>
+    <!-- dashboard section ends here -->
+
     <!-- footer starts here -->
     <footer>
         <div class="container">
@@ -153,6 +161,17 @@
       AOS.init({
         duration: 700,
       });
+    </script>
+
+    <!-- dashboard js -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const userName = localStorage.getItem('userName');
+            const userEmail = localStorage.getItem('userEmail');
+
+            document.getElementById('userName').textContent = userName;
+            document.getElementById('userEmail').textContent = userEmail;
+        });
     </script>
     
 </body>
