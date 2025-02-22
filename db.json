@@ -1,0 +1,74 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Varshith",
+      "email": "varshith@email.com",
+      "balance": 13020
+    },
+    {
+      "id": "2",
+      "name": "Lalith",
+      "email": "Lalith@email.com",
+      "balance": 6980
+    },
+    {
+      "id": "3",
+      "name": "VijayDevarakonda",
+      "email": "vijaydevarakonda@email.com",
+      "balance": 24000
+    },
+    {
+      "id": "68ca",
+      "name": "qwertyuiop",
+      "email": "qwertyuiop@gmail.com",
+      "password": "qwertyuiop",
+      "balance": 0
+    }
+  ],
+  "transactions": [
+    {
+      "id": "4c26",
+      "date": "2025-02-21T23:16:31.562Z",
+      "sender": "Varshith",
+      "receiver": "Lalith",
+      "amount": 123
+    },
+    {
+      "id": "a10c",
+      "date": "2025-02-21T23:16:51.872Z",
+      "sender": "Varshith",
+      "receiver": "Lalith",
+      "amount": 1234
+    },
+    {
+      "id": "2a80",
+      "date": "2025-02-21T23:21:56.059Z",
+      "sender": "Varshith",
+      "receiver": "Lalith",
+      "amount": 1000
+    },
+    {
+      "id": "2bdd",
+      "date": "2025-02-21T23:30:23.805Z",
+      "sender": "Varshith",
+      "receiver": "Varshith",
+      "amount": 500
+    },
+    {
+      "id": "68e2",
+      "date": "2025-02-22T08:47:36.819Z",
+      "sender": "Varshith",
+      "receiver": "Lalith",
+      "amount": 123
+    }
+  ],
+  "loans": [
+    {
+      "id": "e73a",
+      "date": "2025-02-21T23:26:12.581Z",
+      "amount": 10000,
+      "status": "Approved"
+    }
+  ]
+}

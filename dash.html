@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoanLoan</title>
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+    <!-- AOS  -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+
+</head>
+<body onload="loader()">
+
+  <!-- loader for splash screen -->
+  <div id="loading"></div>
+
+    <!-- navbar starts here  -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="./index.html">NoanLoan</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="aboutus.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./customers.html">Customers</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+    <!-- navbar ends here  -->
+
+    <!-- hero section starts here -->
+    <div class="container-fluid hero-content">
+      <div class="row align-items-center">
+        <div class="col-md-6 col-sm-12 text-center" data-aos="fade-up">
+          <h1>Money Transaction</h1>
+          <p class="lead muted">Easy Way To Transfer Money</p>
+          <p>Welcome To NoanLoan</p>
+          <br>
+          <br>
+          <a class="get-started" href="./customers.html">Transfer Money</a>
+        </div>
+        <div class="col-md-6 col-sm-12 text-center" data-aos="fade-left">
+          <div class="hero-img-div">
+            <img class="hero-img" src="https://moneytransfers.com/wp-content/uploads/2020/02/transfer-money.png" alt="img-showing-money-transfer">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- hero section ends here -->
+
+    <!-- services section starts here -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="row">
+                <div class="col-md-4 service-item">
+                    <h3>Personal Banking</h3>
+                    <p>Manage your personal finances with ease.</p>
+                </div>
+                <div class="col-md-4 service-item">
+                    <h3>Business Banking</h3>
+                    <p>Solutions tailored for your business needs.</p>
+                </div>
+                <div class="col-md-4 service-item">
+                  <a href="./loan.html" style="text-decoration: none; color: inherit; cursor: pointer;">
+                    <h3>Loans</h3>
+                    <p>Get the financial support you need.</p>
+                </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- services section ends here -->
+
+    <!-- about section starts here -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>NoanLoan Bank has been serving the community since 1990. Our mission is to provide exceptional financial services to our customers.</p>
+        </div>
+    </section>
+    <!-- about section ends here -->
+
+    <!-- contact section starts here -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Have questions? Reach out to us at <a href="mailto:info@noanloanbank.com">info@noanloanbank.com</a></p>
+        </div>
+    </section>
+    <!-- contact section ends here -->
+
+    <!-- footer starts here -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>NoanLoan is the place where customers feel the sense of safety for their property. In the bank, customers can send money easily. Transaction of money is the main part where customers take shelter of the bank.</p>
+                </div>
+                <div class="col-md-6">
+                    <h3>My Address</h3>
+                    <p>HIG - A/2, Housing Board Colony, Balco<br>495684</p>
+                    <p>Email: rahulraj68502.1@gmail.com</p>
+                    <a href="aboutus.html" class="btn btn-danger btn-lg">About NoanLoan Bank</a>
+                    <h3>Follow Us</h3>
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-google"></a>
+                    <a href="https://www.linkedin.com/in/rahul-raj-sinha/" class="fa fa-linkedin"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                </div>
+            </div>
+            <p>&copy; 2025 NoanLoan Bank. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- footer ends here -->
+
+    <!-- splash screen js -->
+    <script>
+      var preloader = document.getElementById("loading");
+      function loader(){
+        preloader.style.display = 'none';
+      }
+    </script>
+
+    <script src="assets/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"></script>
+
+    <!-- aos data  -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 700,
+      });
+    </script>
+    
+</body>
+</html>

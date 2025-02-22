@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Services - NoanLoan</title>
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+            color: #002366;
+        }
+
+        .navbar {
+            background-color: #002366;
+        }
+
+        .navbar-brand, .nav-link {
+            color: #ffffff !important;
+        }
+
+        .nav-link:hover {
+            background-color: #005f73;
+            border-radius: 5px;
+        }
+
+        .loan-hero {
+            color: #ffffff;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .loan-hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .loan-hero p {
+            font-size: 1.5rem;
+        }
+
+        .loan-form, .loan-calculator {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 2rem 0;
+        }
+
+        .loan-form h2, .loan-calculator h2 {
+            color: #002366;
+            margin-bottom: 1.5rem;
+        }
+
+        .loan-form label, .loan-calculator label {
+            font-weight: bold;
+            color: #002366;
+        }
+
+        .loan-form input, .loan-calculator input {
+            border: 1px solid #005f73;
+            border-radius: 5px;
+            padding: 0.5rem;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .loan-form button, .loan-calculator button {
+            background-color: #ff6b35;
+            color: #ffffff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .loan-form button:hover, .loan-calculator button:hover {
+            background-color: #e65a2b;
+        }
+
+        .loan-details {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 2rem 0;
+        }
+
+        .loan-details h2 {
+            color: #002366;
+            margin-bottom: 1.5rem;
+        }
+
+        .loan-details p {
+            color: #555555;
+        }
+
+        footer {
+            background-color: #002366;
+            color: #ffffff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: #ffffff;
+            margin: 0 0.5rem;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #ff6b35;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="./index.html">NoanLoan</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./aboutus.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./customers.html">Customers</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="./loan.html">Loans</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Loan Hero Section -->
+    <section class="loan-hero">
+        <div class="container">
+            <h1>Loan Services</h1>
+            <p>Get the financial support you need with our flexible loan options.</p>
+        </div>
+    </section>
+
+    <!-- Loan Application Form -->
+    <section class="container loan-form">
+        <h2>Apply for a Loan</h2>
+        <form id="loanForm">
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="loanAmount">Loan Amount</label>
+                <input type="number" id="loanAmount" placeholder="Enter loan amount" required>
+            </div>
+            <div class="form-group">
+                <label for="loanPurpose">Loan Purpose</label>
+                <input type="text" id="loanPurpose" placeholder="Enter loan purpose" required>
+            </div>
+            <button type="submit">Submit Application</button>
+        </form>
+    </section>
+
+    <!-- Loan Calculator -->
+    <section class="container loan-calculator">
+        <h2>Loan Calculator</h2>
+        <form>
+            <div class="form-group">
+                <label for="principal">Loan Amount</label>
+                <input type="number" id="principal" placeholder="Enter loan amount" required>
+            </div>
+            <div class="form-group">
+                <label for="interestRate">Interest Rate (%)</label>
+                <input type="number" id="interestRate" placeholder="Enter interest rate" required>
+            </div>
+            <div class="form-group">
+                <label for="loanTerm">Loan Term (Years)</label>
+                <input type="number" id="loanTerm" placeholder="Enter loan term" required>
+            </div>
+            <button type="button" onclick="calculateLoan()">Calculate</button>
+        </form>
+        <div id="loanResult" class="mt-3"></div>
+    </section>
+
+    <!-- Loan Details -->
+    <section class="container loan-details">
+        <h2>Loan Details</h2>
+        <p>We offer a variety of loan options tailored to meet your financial needs. Whether you're looking for a personal loan, business loan, or mortgage, we've got you covered.</p>
+        <ul>
+            <li>Competitive interest rates</li>
+            <li>Flexible repayment options</li>
+            <li>Quick approval process</li>
+        </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 NoanLoan Bank. All rights reserved.</p>
+        <p>Contact us at <a href="mailto:info@noanloanbank.com">info@noanloanbank.com</a></p>
+    </footer>
+
+    <!-- Loan Approval Script -->
+    <script>
+        document.getElementById('loanForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const loanAmount = parseInt(document.getElementById('loanAmount').value);
+
+            try {
+                // Fetch the current user's data
+                const user = await fetch('http://localhost:3001/users/1').then(res => res.json());
+
+                // Update the user's balance
+                const newBalance = user.balance + loanAmount;
+                await fetch('http://localhost:3001/users/1', {
+                    method: 'PATCH',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ balance: newBalance })
+                });
+
+                // Record the loan in the database
+                await fetch('http://localhost:3001/loans', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        date: new Date().toISOString(),
+                        amount: loanAmount,
+                        status: "Approved"
+                    })
+                });
+
+                alert(`Loan of $${loanAmount} approved! Your new balance is $${newBalance}.`);
+                window.location.href = './customers.html'; // Redirect to the customer page
+            } catch (error) {
+                console.error('Error processing loan:', error);
+                alert('Loan approval failed. Please try again.');
+            }
+        });
+
+        // Loan Calculator Function
+        function calculateLoan() {
+            const principal = parseFloat(document.getElementById('principal').value);
+            const interestRate = parseFloat(document.getElementById('interestRate').value);
+            const loanTerm = parseFloat(document.getElementById('loanTerm').value);
+
+            const monthlyInterestRate = (interestRate / 100) / 12;
+            const numberOfPayments = loanTerm * 12;
+
+            const monthlyPayment = (principal * monthlyInterestRate) / (1 - Math.pow(1 + monthlyInterestRate, -numberOfPayments));
+            const totalPayment = monthlyPayment * numberOfPayments;
+            const totalInterest = totalPayment - principal;
+
+            document.getElementById('loanResult').innerHTML = `
+                <p><strong>Monthly Payment:</strong> $${monthlyPayment.toFixed(2)}</p>
+                <p><strong>Total Payment:</strong> $${totalPayment.toFixed(2)}</p>
+                <p><strong>Total Interest:</strong> $${totalInterest.toFixed(2)}</p>
+            `;
+        }
+    </script>
+</body>
+</html>

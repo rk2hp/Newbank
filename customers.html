@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Accounts | NoanLoan</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/customer.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- navbar starts here  -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="./index.html">NoanLoan</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="./index.html">Home </a>
+          </li>
+          <li class="nav-item active">
+            <a
+              class="nav-link"
+              href="./customers.html"
+              style="
+                color: rgb(37, 36, 36) !important;
+                background-color: rgb(180, 178, 178);
+              "
+              >Send Money</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- navbar ends here  -->
+
+    <div class="my-info text-center">
+      <h2>Name: <span id="userName">Loading...</span></h2>
+      <h4>Net Bank Balance: $<span id="myAccountBalance">Loading...</span></h4>
+
+      <button class="btn btn-info" data-toggle="modal" data-target="#sendMoney">
+        Send Money
+      </button>
+      <a
+        class="btn btn-info"
+        href=""
+        data-toggle="modal"
+        data-target="#transactionHistory"
+        >See All Transactions</a
+      >
+    </div>
+
+    <!-- Modal send money -->
+    <div
+      class="modal fade"
+      id="sendMoney"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Send Money</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  id="enterName"
+                  class="form-control"
+                  placeholder="Recipient's username"
+                  aria-label="Recipient's username"
+                  aria-describedby="basic-addon2"
+                />
+                <div class="input-group-append">
+                  <span class="input-group-text" id="basic-addon2"
+                    >@email.com</span
+                  >
+                </div>
+              </div>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">$</span>
+                </div>
+                <input
+                  type="text"
+                  id="enterAmount"
+                  class="form-control"
+                  placeholder=" Enter Amount"
+                  aria-label="Amount (to the nearest dollar)"
+                />
+                <div class="input-group-append">
+                  <span class="input-group-text">.00</span>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              onclick="sendMoney()"
+              class="btn btn-success"
+              data-dismiss="modal"
+            >
+              Send Money
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal transaction History-->
+    <div
+      class="modal fade"
+      id="transactionHistory"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Transaction History
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <ol id="transaction-history-body"></ol>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Loan Transactions Table -->
+    <div class="container mt-4">
+      <h3>Loan Transactions</h3>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Loan Amount</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="loanTransactionsBody">
+          <!-- Loan transactions will be dynamically added here -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Previous Transactions Table -->
+    <div class="container mt-4">
+      <h3>Previous Transactions</h3>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Recipient</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody id="previousTransactionsBody">
+          <!-- Previous transactions will be dynamically added here -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- table  -->
+    <div class="container">
+      <div class="table-responsive">
+        <table class="table table-hover table-bordered">
+          <thead>
+            <tr class="table-danger">
+              <th scope="col">Sl. No.</th>
+              <th scope="col">Name</th>
+              <th scope="col">E-mail</th>
+              <th scope="col">Bank Balance(in $)</th>
+            </tr>
+          </thead>
+          <tbody id="customersTable">
+            <!-- Customer data will be dynamically added here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"></script>
+
+    <!-- Script to interact with JSON Server -->
+    <script>
+      // Fetch initial data
+      async function loadData() {
+        try {
+          // Load user data
+          const user = await fetch("http://localhost:3001/users/1").then((res) =>
+            res.json()
+          );
+          document.getElementById("userName").textContent = user.name;
+          document.getElementById("myAccountBalance").textContent = user.balance;
+
+          // Load all customers
+          const customers = await fetch("http://localhost:3001/users").then(
+            (res) => res.json()
+          );
+          const customersTable = document.getElementById("customersTable");
+          customersTable.innerHTML = customers
+            .map(
+              (customer) => `
+              <tr>
+                <td>${customer.id}</td>
+                <td>${customer.name}</td>
+                <td>${customer.email}</td>
+                <td>$${customer.balance}</td>
+              </tr>
+            `
+            )
+            .join("");
+
+          // Load transactions
+          const transactions = await fetch(
+            "http://localhost:3001/transactions"
+          ).then((res) => res.json());
+          const transactionList = document.getElementById(
+            "transaction-history-body"
+          );
+          transactionList.innerHTML = transactions
+            .map(
+              (t) => `
+              <li>$${t.amount} sent to ${t.receiver} on ${new Date(
+                t.date
+              ).toLocaleString()}</li>
+            `
+            )
+            .join("");
+
+          // Load loans
+          const loans = await fetch("http://localhost:3001/loans").then((res) =>
+            res.json()
+          );
+          const loanTable = document.getElementById("loanTransactionsBody");
+          loanTable.innerHTML = loans
+            .map(
+              (loan) => `
+              <tr>
+                <td>${new Date(loan.date).toLocaleString()}</td>
+                <td>$${loan.amount}</td>
+                <td>${loan.status}</td>
+              </tr>
+            `
+            )
+            .join("");
+        } catch (error) {
+          console.error("Error loading data:", error);
+        }
+      }
+
+      // Function to send money
+      async function sendMoney() {
+        const enterName = document.getElementById("enterName").value.trim();
+        const enterAmount = parseInt(
+          document.getElementById("enterAmount").value
+        );
+
+        try {
+          // Get current user
+          const sender = await fetch("http://localhost:3001/users/1").then(
+            (res) => res.json()
+          );
+
+          // Find recipient
+          const allUsers = await fetch("http://localhost:3001/users").then(
+            (res) => res.json()
+          );
+          const recipient = allUsers.find((u) => u.name === enterName);
+
+          if (!recipient) {
+            alert("Recipient not found!");
+            return;
+          }
+
+          if (enterAmount > sender.balance) {
+            alert("Insufficient funds!");
+            return;
+          }
+
+          // Update sender balance
+          await fetch(`http://localhost:3001/users/1`, {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ balance: sender.balance - enterAmount }),
+          });
+
+          // Update recipient balance
+          await fetch(`http://localhost:3001/users/${recipient.id}`, {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ balance: recipient.balance + enterAmount }),
+          });
+
+          // Record transaction
+          await fetch("http://localhost:3001/transactions", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              date: new Date().toISOString(),
+              sender: sender.name,
+              receiver: recipient.name,
+              amount: enterAmount,
+            }),
+          });
+
+          // Reload data
+          loadData();
+          alert("Transaction successful!");
+        } catch (error) {
+          console.error("Transaction failed:", error);
+          alert("Transaction failed!");
+        }
+      }
+
+      // Initial load
+      loadData();
+    </script>
+  </body>
+</html>
