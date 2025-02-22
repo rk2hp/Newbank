@@ -4,34 +4,33 @@
       "id": "1",
       "name": "Prashant Chaudhary",
       "email": "Prashant@email.com",
-      "balance": 1247464
+      "balance": 24800
     },
     {
       "id": "2",
       "name": "Lalith",
       "email": "Lalith@email.com",
-      "balance": 7103
+      "balance": 8337
     },
     {
       "id": "3",
       "name": "Shubh",
       "email": "Shubh@email.com",
-      "balance": 24000
+      "balance": 24343
     },
     {
       "id": "4",
-      "name": "Pushkar Singh",
+      "name": "Pushkar",
       "email": "Pushkar@email.com",
-      "balance": 1247464
+      "balance": 1247587
     },
     {
       "id": "68ca",
-      "name": "qwertyuiop",
-      "email": "qwertyuiop@gmail.com",
+      "name": "Anurag",
+      "email": "anurag@email.com",
       "password": "qwertyuiop",
       "balance": 0
     }
-
   ],
   "transactions": [
     {
@@ -75,6 +74,27 @@
       "sender": "Varshith",
       "receiver": "Lalith",
       "amount": 123
+    },
+    {
+      "id": "dd83",
+      "date": "2025-02-22T09:34:28.311Z",
+      "sender": "Prashant Chaudhary",
+      "receiver": "Lalith",
+      "amount": 1234
+    },
+    {
+      "id": "1499",
+      "date": "2025-02-22T09:51:18.054Z",
+      "sender": "Prashant Chaudhary",
+      "receiver": "Pushkar",
+      "amount": 123
+    },
+    {
+      "id": "04c4",
+      "date": "2025-02-22T09:58:26.502Z",
+      "sender": "Prashant Chaudhary",
+      "receiver": "Shubh",
+      "amount": 343
     }
   ],
   "loans": [
@@ -87,6 +107,18 @@
     {
       "id": "e449",
       "date": "2025-02-22T09:01:35.447Z",
+      "amount": 1234567,
+      "status": "Approved"
+    },
+    {
+      "id": "b69d",
+      "date": "2025-02-22T09:43:43.710Z",
+      "amount": 123,
+      "status": "Approved"
+    },
+    {
+      "id": "8dc2",
+      "date": "2025-02-22T09:59:13.726Z",
       "amount": 1234567,
       "status": "Approved"
     }
